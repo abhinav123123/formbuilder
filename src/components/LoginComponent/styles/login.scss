@@ -1,0 +1,48 @@
+.login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f0f2f5;
+}
+
+.login-card {
+    width: 400px;
+    padding: 40px 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #ffffffff;
+    flex-direction: column;
+    border-radius: 18px;
+
+    .account-login {
+        font-size: 24px;
+        font-weight: 600;
+        margin-bottom: 18px;
+    }
+
+    .login-with-sso {
+        text-align: center;
+        font-weight: 400;
+        margin-bottom: 16px;
+    }
+
+    .login-form {
+        width: 100%;
+        max-width: 300px;
+
+
+        .ant-input {
+            border-radius: 4px;
+        }
+
+
+        .ant-btn {
+            width: 100%;
+            border-radius: 4px;
+        }
+    }
+}
