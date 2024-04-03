@@ -1,7 +1,7 @@
 // eslint-disable-next-line max-classes-per-file
 import fetch from 'isomorphic-fetch';
 import { saveAs } from 'file-saver';
-import React from 'react';
+import React,{ forwardRef }  from 'react';
 import Select from 'react-select';
 import SignaturePad from 'react-signature-canvas';
 // import ReactBootstrapSlider from 'react-bootstrap-slider';
@@ -16,6 +16,8 @@ import { AgGridReact } from 'ag-grid-react';
 import "ag-grid-community/styles/ag-grid.css";
 import "ag-grid-community/styles/ag-theme-quartz.css";
 import 'ag-grid-enterprise';
+
+// import {FNContainer} from '../packages/sortable-form-elements'
 
 const FormElements = {};
 
@@ -564,6 +566,58 @@ class Checkboxes extends React.Component {
   }
 }
 
+// class Tabbed extends React.Component {
+//   constructor(props) {
+//     super(props);
+//     this.options = {};
+//   }
+
+//   render() {
+//     const self = this;
+//     let classNames = 'custom-control custom-checkbox';
+//     if (this.props.data.inline) { classNames += ' option-inline'; }
+
+//     let baseClasses = 'SortableItem rfb-item';
+//     if (this.props.data.pageBreakBefore) { baseClasses += ' alwaysbreak'; }
+
+//     return (
+//       <div style={{ ...this.props.style }} className={baseClasses}>
+//         <ComponentHeader {...this.props} />
+//         <div style={{display:'flex',border:'1px solid gray'}}>
+//           <ComponentLabel {...this.props} />
+//           {this.props.data.options.map((option) => {
+//             const this_key = `preview_${option.key}`;
+//             const props = {};
+//             props.name = `option_${option.key}`;
+
+//             // props.type = 'checkbox';
+//             props.value = option.value;
+//             if (self.props.mutable) {
+//               props.defaultChecked = self.props.defaultValue !== undefined && self.props.defaultValue.indexOf(option.key) > -1;
+//             }
+//             if (this.props.read_only) {
+//               props.disabled = 'disabled';
+//             }
+//             return (
+//               <div className={classNames} key={this_key}>
+//                 <input id={`fid_${this_key}`} className="custom-control-input" ref={c => {
+//                   if (c && self.props.mutable) {
+//                     self.options[`child_ref_${option.key}`] = c;
+//                   }
+//                 }} {...props} />
+//                 <label className="custom-control-label" style={{ padding:'2px'}} htmlFor={`fid_${this_key}`}>{option.text}</label>
+//               </div>
+//             );
+//           })}
+//         </div>
+//       </div>
+//       // <>
+//       //  <ComponentHeader {...this.props} />
+//       // </>
+//     );
+//   }
+// }
+
 class RadioButtons extends React.Component {
   constructor(props) {
     super(props);
@@ -1046,5 +1100,6 @@ FormElements.Download = Download;
 FormElements.Camera = Camera;
 FormElements.FileUpload = FileUpload;  
 FormElements.Range = Range;
+// FormElements.Tabbed=Tabbed;
 
 export default FormElements;

@@ -83,6 +83,12 @@ class Toolbar extends React.Component {
           { value: 'place_holder_option_2', text: intl.formatMessage({ id: 'place-holder-option-2' }), key: `checkboxes_option_${ID.uuid()}` },
           { value: 'place_holder_option_3', text: intl.formatMessage({ id: 'place-holder-option-3' }), key: `checkboxes_option_${ID.uuid()}` },
         ];
+        case 'Tabbed':
+        return [
+          { value: 'place_holder_option_1', text: intl.formatMessage({ id: 'place_holder_option_1' }), key: `checkboxes_option_${ID.uuid()}` },
+          { value: 'place_holder_option_2', text: intl.formatMessage({ id: 'place_holder_option_2' }), key: `checkboxes_option_${ID.uuid()}` },
+          { value: 'place_holder_option_3', text: intl.formatMessage({ id: 'place_holder_option_3' }), key: `checkboxes_option_${ID.uuid()}` },
+        ];
       case 'RadioButtons':
         return [
           { value: 'place_holder_option_1', text: intl.formatMessage({ id: 'place-holder-option-1' }), key: `radiobuttons_option_${ID.uuid()}` },
@@ -98,7 +104,6 @@ class Toolbar extends React.Component {
     return [
       {
          key:'Tabbed',
-        // key: 'Dropdown',
         // canHaveAnswer: true,
         // field_name: 'dropdown_',
         options: [],

@@ -10,7 +10,7 @@ import CustomElement from '../form-elements/custom-element';
 import Registry from '../stores/registry';
 import { useElementState } from '../appRedux/hooks';
 import { FNContainer } from './sortable-form-elements';
-import {TabbedContainer} from './sortable-form-elements';
+import {Tabbed} from './sortable-form-elements';
 
 const {
   Image, Checkboxes, Signature, Download, Camera, FileUpload
@@ -423,8 +423,8 @@ const ReactForm = ({
         return getContainerElement(item, FieldSet);
       case 'Container':
         return <FNContainer {...item}/>;
-        // case 'Tabbed':
-        //   return <TabbedContainer {...item}/>
+        case 'Tabbed':
+          return <Tabbed {...item}/>
       case 'Signature':
         return <Signature ref={c => setInputs(prevState => ({ ...prevState, [item.field_name]: c }))} read_only={false} mutable={true} key={`form_${item.id}`} data={item} defaultValue={getDefaultValue(item)} />;
       case 'Checkboxes':
